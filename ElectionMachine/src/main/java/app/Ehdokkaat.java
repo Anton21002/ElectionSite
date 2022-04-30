@@ -1,7 +1,9 @@
 package app;
-
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.servlet.http.HttpServlet;
-
+@Entity
+@NamedQuery(name="Ehdokkaat.findAll", query="SELECT f FROM Fish f")
 public class Ehdokkaat extends HttpServlet {
 	
 	/**
