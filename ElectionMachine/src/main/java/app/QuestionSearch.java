@@ -22,20 +22,20 @@ public class QuestionSearch {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("ElectionMachine");
 	@GET
 	@Path("")
-	public void Search (PrintWriter out,String searchImport)
+	public void Search (PrintWriter out,String SrchReqStr)
 	{	
 	EntityManager em=emf.createEntityManager();
     em.getTransaction().begin();
     Query q=em.createQuery("SELECT * from Kysymukset where Kysymus LIKE :paramName");
-	q.setParameter("paramName", searchImport);
+	q.setParameter("paramName",SrchReqStr );
     List<FitKysymys> list=q.getResultList();
     em.getTransaction().commit();
     em.close();
-    RequestDispatcher rd=q.getRequestDispatcher("./jsp/Searchtab.jsp");
+    //RequestDispatcher rd=q.getRequestDispatcher("./jsp/Searchtab.jsp");
 	PrintFitting(out, list);
 }
 //SELECT * from Kysymukset where Kysymus LIKE %searchinp(var)%
-public void PrintFitting (PrintWriter out,List<Kysymys> list) {
+public void PrintFitting (PrintWriter out,List<FitKysymys> list) {
 	
 }
 
