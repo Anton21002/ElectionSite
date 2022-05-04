@@ -35,7 +35,7 @@ public class QuestionSearch {
     //RequestDispatcher rd=q.getRequestDispatcher("./jsp/Searchtab.jsp");
 	PrintFitting(out, list);
 }
-@Path("/")
+@Path("/printsearchresults")
 	//SELECT * from Kysymukset where Kysymus LIKE %searchinp(var)%
 public void PrintFitting (PrintWriter out,List<FitKysymys> list) {
 	for (int i=0;list!=null && i<list.size();i++) {
