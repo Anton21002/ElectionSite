@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Search tab</title>
 </head>
 <body>
+<h1>Search for questions that include</h1><br>
+<form action=/kysymussearch/startsearch >
+<input type="text" name="Searchdata">
+<input type="search" value="Search">
+
+
+
+</form>
+
+
 Searching for: ${RequestScope.kysymus.id}
 <br>
 Similar questions:
