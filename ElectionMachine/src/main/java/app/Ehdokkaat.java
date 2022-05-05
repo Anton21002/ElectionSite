@@ -1,9 +1,12 @@
 package app;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.servlet.http.HttpServlet;
 @Entity
-@NamedQuery(name="Ehdokkaat.findAll", query="SELECT f FROM Fish f")
+@NamedQuery(name="Ehdokkaat.findAll", query="select a from ehdokkaat a")
 public class Ehdokkaat extends HttpServlet {
 	
 	/**
@@ -11,11 +14,15 @@ public class Ehdokkaat extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private String SUKUNIMI,ETUNIMI,PUOLUE,KOTIPAIKKAKUNTA,MIKSI_EDUSKUNTAAN , MITA_ASIOITA_HALUAT_EDISTAA,AMMATTI;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int EHDOKAS_ID;
+	private int IKA;
 
-	private int EHDOKAS_ID , IKA;
-	
-	
+	private String SUKUNIMI,ETUNIMI,PUOLUE,KOTIPAIKKAKUNTA,MIKSI_EDUSKUNTAAN , MITA_ASIOITA_HALUAT_EDISTAA,AMMATTI;
+	public Ehdokkaat() {
+		
+	}
 	public int getEHDOKAS_ID() {
 		return EHDOKAS_ID;
 	}
