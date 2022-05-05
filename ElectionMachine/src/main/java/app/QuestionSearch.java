@@ -9,9 +9,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.servlet.RequestDispatcher;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
+import app.dao.Dao;
 import app.dao.FitKysymys;
 
 
@@ -20,20 +23,21 @@ import app.dao.FitKysymys;
 @Path("/kysymussearch")
 public class QuestionSearch {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("ElectionMachine");
-	String SrchReqStr;	
+	String SrchReqStr;
+	@GET
 	@Path("/startsearch")
-	public void Search (PrintWriter out,String SrchReqStr)
+	@Consumes("text/html")
+	public void Search (PrintWriter out,@FormParam("SearchData")String SrchReqStr)
 	{
-	
 	EntityManager em=emf.createEntityManager();
     em.getTransaction().begin();
     Query q=em.createQuery("SELECT k from Kysymukset k where k.Kysymus LIKE %paramName%");
 	q.setParameter("paramName",SrchReqStr );
+    em.getTransaction().commit(); 
     List<FitKysymys> list=q.getResultList();
-    em.getTransaction().commit();
     em.close();
-    //RequestDispatcher rd=q.getRequestDispatcher("./jsp/Searchtab.jsp");
-	PrintFitting(out, list);
+    //RequestDispatcher rd=q.getRequestDispatcher("jsp/Searchtab.jsp");
+	//PrintFitting(out, list);
 }
 @Path("/printsearchresults")
 	//SELECT * from Kysymukset where Kysymus LIKE %searchinp(var)%

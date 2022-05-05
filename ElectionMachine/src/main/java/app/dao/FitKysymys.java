@@ -7,7 +7,8 @@ public class FitKysymys implements Serializable {
 	public String srchReqStr;
 	public int fitId;
 	public String fitKys;
-	public FitKysymys[] getFitKysymus() {
+	public FitKysymys[] getFitKysymus(String srchReqStr) {
+		
 		// TODO Auto-generated method stub
 		return null;
 	}

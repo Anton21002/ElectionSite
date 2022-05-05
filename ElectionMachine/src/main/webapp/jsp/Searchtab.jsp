@@ -23,7 +23,7 @@ Searching for: ${RequestScope.kysymus.id}
 Similar questions:
 <br>
 <ol>
-<c:forEach var="kysymus" items="${requestScope.kid.fishlist }">
+<c:forEach var="kysymus" items="${requestScope.kysymus.kysymuslist }">
 <li>${kysymus.id}: ${kysymus.kysymus}
 </c:forEach>
 </ol>
