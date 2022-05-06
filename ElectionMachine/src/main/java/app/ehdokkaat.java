@@ -3,25 +3,34 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.servlet.http.HttpServlet;
 @Entity
-@NamedQuery(name="Ehdokkaat.findAll", query="select a from ehdokkaat a")
-public class Ehdokkaat extends HttpServlet {
+public class ehdokkaat {
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int EHDOKAS_ID;
 	private int IKA;
-
 	private String SUKUNIMI,ETUNIMI,PUOLUE,KOTIPAIKKAKUNTA,MIKSI_EDUSKUNTAAN , MITA_ASIOITA_HALUAT_EDISTAA,AMMATTI;
-	public Ehdokkaat() {
-		
+	public ehdokkaat() {
+		super();
+	}
+	public ehdokkaat(int EHDOKAS_ID,String AMMATTI, String ETUNIMI, int IKA,String KOTIPAIKKAKUNTA, String MIKSI_EDUSKUNTAAN, String MITA_ASIOITA_HALUAT_EDISTAA,  String PUOLUE,String SUKUNIMI) {
+		super();
+		this.EHDOKAS_ID = EHDOKAS_ID;
+		this.SUKUNIMI = SUKUNIMI;
+		this.ETUNIMI = ETUNIMI;
+		this.PUOLUE = PUOLUE;
+		this.KOTIPAIKKAKUNTA = KOTIPAIKKAKUNTA;
+		this.IKA = IKA;
+		this.MIKSI_EDUSKUNTAAN = MIKSI_EDUSKUNTAAN;
+		this.MITA_ASIOITA_HALUAT_EDISTAA = MITA_ASIOITA_HALUAT_EDISTAA;
+		this.AMMATTI = AMMATTI;
 	}
 	public int getEHDOKAS_ID() {
 		return EHDOKAS_ID;

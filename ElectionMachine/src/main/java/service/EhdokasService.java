@@ -20,23 +20,30 @@ import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
-import app.Ehdokkaat;
+import app.ehdokkaat;
 import java.util.ArrayList;
 import java.util.List;
 @Path("/EhdokasService")
+
 public class EhdokasService {
-	EntityManagerFactory emf=Persistence.createEntityManagerFactory("ehdokkaat");
+	
 	
 	
 	@GET
 	@Path("/readehdokkaat")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Ehdokkaat> readEhdokas() {
+	public void  readEhdokas(@Context HttpServletRequest request,
+			@Context HttpServletResponse response) throws ServletException, IOException {
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("ehdokkaat");
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		List<Ehdokkaat> list=em.createQuery("select a from Ehdokkaat a").getResultList();
+		List<ehdokkaat> list=em.createQuery("select a from ehdokkaat a").getResultList();
 		em.getTransaction().commit();
-		return list;
+		//return list;
+		request.setAttribute("ehdokkaatlist", list);
+		  RequestDispatcher rd=request.getRequestDispatcher("/showehdokkaat.jsp");
+		  rd.forward(request, response);
+		
 	}
 }
