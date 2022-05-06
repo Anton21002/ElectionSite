@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Search for questions that include</h1><br>
-<form action=/kysymussearch/startsearch >
+<form action="/service/KysymusSearch/startsearch" method="get">
 <input type="text" name="Searchdata">
 <input type="submit" value="Search">
 
@@ -18,12 +18,12 @@
 </form>
 
 
-Searching for: ${RequestScope.kysymus.id}
+
 <br>
 Similar questions:
 <br>
 <ol>
-<c:forEach var="kysymus" items="${requestScope.kysymus.kysymuslist }">
+<c:forEach var="list" items="${requestScope.kysymus.kysymuslist }">
 <li>${kysymus.id}: ${kysymus.kysymus}
 </c:forEach>
 </ol>

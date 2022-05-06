@@ -20,12 +20,12 @@ import app.dao.FitKysymys;
 
 
 
-@Path("/kysymussearch")
+@Path("/QuestionSearch")
 public class QuestionSearch {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("ElectionMachine");
 	String SrchReqStr;
 	@GET
-	@Path("/startsearch")
+	@Path("/startsearchdepr")
 	@Consumes("text/html")
 	public void Search (PrintWriter out,@FormParam("SearchData")String SrchReqStr)
 	{
