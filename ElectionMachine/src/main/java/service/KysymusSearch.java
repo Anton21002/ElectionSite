@@ -19,8 +19,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import com.google.appengine.repackaged.com.google.gson.Gson;
-import com.google.appengine.repackaged.com.google.gson.JsonObject;
-import com.mysql.cj.xdevapi.JsonArray;
 
 import app.dao.FitKysymys;
 
@@ -33,8 +31,8 @@ public class KysymusSearch {
 		String SrchReqStr;
 		@GET
 		@Path("/startsearch")
-		@Consumes(MediaType.TEXT_PLAIN)
-		@Produces(MediaType.TEXT_PLAIN)
+		@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+		@Produces(MediaType.APPLICATION_JSON)
 		public String Search (PrintWriter out,@FormParam("SearchData")String SrchReqStr,@Context HttpServletRequest request,@Context HttpServletResponse response) throws ServletException, IOException
 		{
 		
