@@ -36,11 +36,10 @@
 		<td>${ehdokkaat.MIKSI_EDUSKUNTAAN}</td>
 		<td>${ehdokkaat.MITA_ASIOITA_HALUAT_EDISTAA}</td>
 		<td>${ehdokkaat.AMMATTI}</td>
-		<td><a href="service/EhdokasService/updateehdokas/${ehdokkaat.EHDOKAS_ID }">update</a></td>
-		<td><a href="service/EhdokasService/deleteEhdokas/${ehdokkaat.EHDOKAS_ID }">Remove</a></td>
+		<td><a href="/service/EhdokasService/deleteEhdokas/${ehdokkaat.EHDOKAS_ID}">Remove</a></td>
 	</tr>
 </c:forEach>
 </table>
-
+<h2><a href="/ehdokkaatforms.html">link to update and add page</a></h2>
 </body>
 </html>

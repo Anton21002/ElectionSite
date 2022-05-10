@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body{
+background-color:#D1F2EB ;
+}
+form{
+background-color:#D1F2EB ;
+
+}
+table{
+margin:0 auto;
+}
+
+h1{
+margin-left:580px;
+}
+a{
+
+color:black;
+}
+td{
+font-size:20px;
+}
+.in{
+border-radius:4px;
+
+}
+</style>
+</head>
+<body>
+  <h1>Add New candidate</h1>  
+  <form  action='./service/EhdokasService/addehdokkaat' method='post' >  
+<table>  
+  
+
+<tr><td>EHDOKAS_ID:<input type="number" class="in" name="EHDOKAS_ID" /></td></tr> 
+<tr><td>SUKUNIMI:</td><td><input type="text"  class="in" name="SUKUNIMI"/></td></tr>  
+<tr><td>ETUNIMI:</td><td><input type="text" class="in" name="ETUNIMI"/></td></tr>  
+<tr><td>PUOLUE:</td><td><input type="text" class="in" name="PUOLUE"/></td></tr>  
+<tr><td>KOTIPAIKKAKUNTA:</td><td>  
+<input   type="text" name="KOTIPAIKKAKUNTA" class="in" style="width:140px">  
+
+ <tr><td>IKA:</td><td><input type="number" class="in" name="IKA"/></td></tr>  
+ <tr><td>MIKSI_EDUSKUNTAAN:</td><td><input type="text" class="in" name="MIKSI_EDUSKUNTAAN"/></td></tr>
+ <tr><td>MITA_ASIOITA_HALUAT_EDISTAA:</td><td><input type="text" class="in" name="MITA_ASIOITA_HALUAT_EDISTAA"/></td></tr>
+ <tr><td>AMMATTI:</td><td><input type="text"  class="in" name="AMMATTI"/></td></tr>
+  
+<tr><td><br><input type='submit' name='ok' value='Send'></td></tr>
+  
+</table>  
+</form>
+
+
+
+
+
+
+<form  action='./service/EhdokasService/updateehdokas/{EHDOKAS_ID}'
+ method='POST'>
+<tr><td>EHDOKAS_ID:<input type="text" class="in" name="EHDOKAS_ID" /></td></tr>  
+
+<tr><td>SUKUNIMI:</td><td><input type="text"  class="in" name="SUKUNIMI"/></td></tr>  
+<tr><td>ETUNIMI:</td><td><input type="text" class="in"  name="ETUNIMI"/></td></tr>  
+<tr><td>PUOLUE:</td><td><input type="text" class="in"  name="PUOLUE"/></td></tr>  
+<tr><td>KOTIPAIKKAKUNTA:</td><td>  
+<input   type="text" name="KOTIPAIKKAKUNTA"  class="in" style="width:140px">  
+
+ <tr><td>IKA:</td><td><input type="number"  class="in" name="IKA"/></td></tr>  
+ <tr><td>MIKSI_EDUSKUNTAAN:</td><td><input type="text"  class="in" name="MIKSI_EDUSKUNTAAN"/></td></tr>
+ <tr><td>MITA_ASIOITA_HALUAT_EDISTAA:</td><td><input type="text"  class="in" name="MITA_ASIOITA_HALUAT_EDISTAA"/></td></tr>
+ <tr><td>AMMATTI:</td><td><input type="text"  class="in"  name="AMMATTI"/></td></tr>
+ <tr><td><br> <input type="submit" name='ok' value="Send"></td></tr>
+ 
+</form>
+<h2><a href="/service/EhdokasService/readehdokkaat">back to list</a></h2>
+</body>
+</html>
