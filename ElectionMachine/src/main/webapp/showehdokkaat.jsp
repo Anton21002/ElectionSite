@@ -36,8 +36,8 @@
 		<td>${ehdokkaat.MIKSI_EDUSKUNTAAN}</td>
 		<td>${ehdokkaat.MITA_ASIOITA_HALUAT_EDISTAA}</td>
 		<td>${ehdokkaat.AMMATTI}</td>
-		<td><a href="service/EhdokasService/update?id=${ehdokkaat.EHDOKAS_ID }">update</a></td>
-		<td><a href="service/EhdokasService/delete?id=${ehdokkaat.EHDOKAS_ID }">Remove</a></td>
+		<td><a href="service/EhdokasService/updateehdokas/${ehdokkaat.EHDOKAS_ID }">update</a></td>
+		<td><a href="service/EhdokasService/deleteEhdokas/${ehdokkaat.EHDOKAS_ID }">Remove</a></td>
 	</tr>
 </c:forEach>
 </table>
