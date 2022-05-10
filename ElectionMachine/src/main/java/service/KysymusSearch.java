@@ -31,16 +31,16 @@ public class KysymusSearch {
 		String SrchReqStr;
 		@GET
 		@Path("/startsearch")
-		@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+		@Consumes(application.)
 		@Produces(MediaType.APPLICATION_JSON)
 		public String Search (PrintWriter out,@FormParam("SearchData")String SrchReqStr,@Context HttpServletRequest request,@Context HttpServletResponse response) throws ServletException, IOException
 		{
 		
 		
-			EntityManagerFactory emf=Persistence.createEntityManagerFactory("Ehdokaat");
+			EntityManagerFactory emf=Persistence.createEntityManagerFactory("ehdokkaat");
 		EntityManager em=emf.createEntityManager();
 	    em.getTransaction().begin();
-	    Query q=em.createQuery("SELECT k from Kysymukset k where k.Kysymus LIKE paramName");
+	    Query q=em.createQuery("SELECT k from Kysymys k where k.Kysymys LIKE :paramName");
 		q.setParameter("paramName","%"+SrchReqStr+"%" );
 	    em.getTransaction().commit();
 	    List<FitKysymys> list=q.getResultList();
