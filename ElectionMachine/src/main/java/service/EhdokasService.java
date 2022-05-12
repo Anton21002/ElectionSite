@@ -80,9 +80,8 @@ public class EhdokasService {
 		ehdokkaat ehdokas = em.find(ehdokkaat.class, EHDOKAS_ID);
 		em.getTransaction().begin();
 		em.remove(ehdokas);
-
 		em.getTransaction().commit();
-
+		
 	}
 
 	@GET

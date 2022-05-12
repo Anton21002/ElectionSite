@@ -11,19 +11,47 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
+<style>
+body
+{background-color: antiquewhite;
+width: 100%;    
+
+}
+table {
+margin:auto;
+width: 50%;
+text-align:center;
+border: 1px solid black;
+}
+h2,h1{
+margin:auto;
+width:50%;
+text-align:center;
+}
+
+.firstrow{
+padding:10px;
+
+}
+th,td{
+border: 1px solid black;
+}
+</style>
+<h1>Vaalikone</h1>
 <table>
 <tr>
-	<th>ID</th>
-	<th>ETUNIMI</th>
-	<th>SUKUNIMI</th>
-	<th>IKA</th>
-	<th>PUOLUE</th>
-	<th>KOTIPAIKKAKUNTA</th>
-	<th>MIKSI_EDUSKUNTAAN</th>
-	<th>MITA_ASIOITA_EDISTAT</th>
-	<th>AMMATTI</th>
+	<th class="firstrow">ID</th>
+	<th class="firstrow">ETUNIMI</th>
+	<th class="firstrow">SUKUNIMI</th>
+	<th class="firstrow">IKA</th>
+	<th class="firstrow">PUOLUE</th>
+	<th class="firstrow">KOTIPAIKKAKUNTA</th>
+	<th class="firstrow">MIKSI_EDUSKUNTAAN</th>
+	<th class="firstrow">MITA_ASIOITA_EDISTAT</th>
+	<th class="firstrow">AMMATTI</th>
 </tr>
 <c:forEach var="ehdokkaat" items="${requestScope.ehdokkaatlist }">
 	<tr>
@@ -40,6 +68,7 @@
 	</tr>
 </c:forEach>
 </table>
+<br><br>
 <h2><a href="/ehdokkaatforms.html">link to update and add page</a></h2>
 </body>
 </html>

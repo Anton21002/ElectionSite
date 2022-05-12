@@ -32,8 +32,8 @@ public class Ehdokkaatsql {
 		
 	}
 	
-	public static List<Ehdokkaat> getEhdokkaitta() {
-	    List<Ehdokkaat> list= new ArrayList<Ehdokkaat>();
+	public static List<ehdokkaat> getEhdokkaitta() {
+	    List<ehdokkaat> list= new ArrayList<ehdokkaat>();
 
 		String query="SELECT * FROM EHDOKKAAT ";
 		Connection conn=Ehdokkaatsql.getConnection();
@@ -49,7 +49,7 @@ public class Ehdokkaatsql {
 
 		    while(result.next()) {
 		    	
-		    	Ehdokkaat ehdokas =new Ehdokkaat();
+		    	ehdokkaat ehdokas =new ehdokkaat();
 
 		    	ehdokas.setEHDOKAS_ID(result.getInt(1));
 

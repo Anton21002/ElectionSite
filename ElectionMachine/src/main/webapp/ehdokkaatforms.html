@@ -15,7 +15,7 @@ table{
 margin:0 auto;
 }
 
-h1{
+h1,h2{
 margin-left:580px;
 }
 a{
@@ -35,9 +35,8 @@ border-radius:4px;
   <h1>Add New candidate</h1>  
   <form  action='./service/EhdokasService/addehdokkaat' method='post' >  
 <table>  
-  
-
-<tr><td>EHDOKAS_ID:<input type="number" class="in" name="EHDOKAS_ID" /></td></tr> 
+<tr><td>EHDOKAS_ID:<input type="number" class="in" name="EHDOKAS_ID" /></td></tr>
+<tr><td><br></td></tr> 
 <tr><td>SUKUNIMI:</td><td><input type="text"  class="in" name="SUKUNIMI"/></td></tr>  
 <tr><td>ETUNIMI:</td><td><input type="text" class="in" name="ETUNIMI"/></td></tr>  
 <tr><td>PUOLUE:</td><td><input type="text" class="in" name="PUOLUE"/></td></tr>  
@@ -58,11 +57,12 @@ border-radius:4px;
 
 
 
-
+<h1>update ehdokas where id=EHDOKAS_ID</h1>
 <form  action='./service/EhdokasService/updateehdokas/{EHDOKAS_ID}'
  method='POST'>
+ <table>
 <tr><td>EHDOKAS_ID:<input type="text" class="in" name="EHDOKAS_ID" /></td></tr>  
-
+<tr><td><br></td></tr> 
 <tr><td>SUKUNIMI:</td><td><input type="text"  class="in" name="SUKUNIMI"/></td></tr>  
 <tr><td>ETUNIMI:</td><td><input type="text" class="in"  name="ETUNIMI"/></td></tr>  
 <tr><td>PUOLUE:</td><td><input type="text" class="in"  name="PUOLUE"/></td></tr>  
@@ -73,8 +73,8 @@ border-radius:4px;
  <tr><td>MIKSI_EDUSKUNTAAN:</td><td><input type="text"  class="in" name="MIKSI_EDUSKUNTAAN"/></td></tr>
  <tr><td>MITA_ASIOITA_HALUAT_EDISTAA:</td><td><input type="text"  class="in" name="MITA_ASIOITA_HALUAT_EDISTAA"/></td></tr>
  <tr><td>AMMATTI:</td><td><input type="text"  class="in"  name="AMMATTI"/></td></tr>
- <tr><td><br> <input type="submit" name='ok' value="Send"></td></tr>
- 
+ <tr><td><br> <input type="submit" name='ok' value="Update"></td></tr>
+ </table>
 </form>
 <h2><a href="/service/EhdokasService/readehdokkaat">back to list</a></h2>
 </body>
