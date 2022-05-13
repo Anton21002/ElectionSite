@@ -13,8 +13,10 @@
 <title>Insert title here</title>
 
 </head>
+<!-- styles by anton -->
 <body>
 <style>
+
 body
 {background-color: antiquewhite;
 width: 100%;    
@@ -64,11 +66,13 @@ border: 1px solid black;
 		<td>${ehdokkaat.MIKSI_EDUSKUNTAAN}</td>
 		<td>${ehdokkaat.MITA_ASIOITA_HALUAT_EDISTAA}</td>
 		<td>${ehdokkaat.AMMATTI}</td>
+		<!-- link to remove func -->
 		<td><a href="/service/EhdokasService/deleteEhdokas/${ehdokkaat.EHDOKAS_ID}">Remove</a></td>
 	</tr>
 </c:forEach>
 </table>
 <br><br>
+<!-- link to ehdokkaat forms where add and delete are done -->
 <h2><a href="/ehdokkaatforms.html">link to update and add page</a></h2>
 </body>
 </html>
